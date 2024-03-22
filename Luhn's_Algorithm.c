@@ -1,13 +1,16 @@
 //Checks to see if a card has a valid number using Luhn's algorithm and the nclassifying into one of three card categories(Visa, Amex, Mastercard)
+//Libraries
 #include <cs50.h>
 #include <math.h>
 #include <stdio.h>
 
+//Prototypes
 int length(long x);
 int sum(long y, int z);
 int sum2(long f, int g);
 void check(long s, int q, int o);
 
+//Main function
 int main(void)
 {
     long n = get_long("Enter Card Number: ");
@@ -18,6 +21,7 @@ int main(void)
     check(n, len, summation);
 }
 
+//Checks type of card
 void check(long s, int q, int o)
 {
     if (o % 10 == 0)
@@ -48,6 +52,7 @@ void check(long s, int q, int o)
     }
 }
 
+//Sums all the remaining digits
 int sum2(long f, int g)
 {
     int h = 0;
@@ -61,6 +66,7 @@ int sum2(long f, int g)
     return h;
 }
 
+//Starting with the second to last number and skipping every other number, this multiplies that digit by two and sums the digits (not the whole number)
 int sum(long y, int z)
 {
     int b = 0;
@@ -83,6 +89,7 @@ int sum(long y, int z)
     return b;
 }
 
+//Determine length of card number
 int length(long x)
 {
     int counter = 0;
