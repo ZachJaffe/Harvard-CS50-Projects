@@ -1,9 +1,13 @@
+//Determines prime numbers in a input range
+//Libraries
 #include <cs50.h>
 #include <stdio.h>
 #include <stdbool.h>
 
+//Prototypes
 bool prime(int number);
 
+//Main Function
 int main(void)
 {
     int min;
@@ -29,6 +33,7 @@ int main(void)
     }
 }
 
+//Determines prime numbers in the input range
 bool prime(int number)
 {
     for (int a = 2; a < number; a++)
